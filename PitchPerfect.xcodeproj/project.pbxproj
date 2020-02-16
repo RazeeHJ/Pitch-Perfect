@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7A50B67F23EDE90B0041761A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A50B67E23EDE90B0041761A /* AppDelegate.swift */; };
-		7A50B68123EDE90B0041761A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A50B68023EDE90B0041761A /* SceneDelegate.swift */; };
 		7A50B68323EDE90B0041761A /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A50B68223EDE90B0041761A /* PlaySoundsViewController.swift */; };
 		7A50B68623EDE90B0041761A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A50B68423EDE90B0041761A /* Main.storyboard */; };
 		7A50B68823EDE90D0041761A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A50B68723EDE90D0041761A /* Assets.xcassets */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		7A50B67B23EDE90B0041761A /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A50B67E23EDE90B0041761A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A50B68023EDE90B0041761A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7A50B68223EDE90B0041761A /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		7A50B68523EDE90B0041761A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A50B68723EDE90D0041761A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,15 +101,13 @@
 		7A50B67D23EDE90B0041761A /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
-				7AA9AF2B23F9D234003004D8 /* PlaySoundsViewController+Audio.swift */,
+				7A5CBCD623F9D70A00F8D2CD /* Scenes */,
+				7A5CBCD523F9D65800F8D2CD /* Extensions */,
 				7A50B67E23EDE90B0041761A /* AppDelegate.swift */,
-				7A50B68023EDE90B0041761A /* SceneDelegate.swift */,
-				7A50B68223EDE90B0041761A /* PlaySoundsViewController.swift */,
 				7A50B68423EDE90B0041761A /* Main.storyboard */,
 				7A50B68723EDE90D0041761A /* Assets.xcassets */,
 				7A50B68923EDE90D0041761A /* LaunchScreen.storyboard */,
 				7A50B68C23EDE90D0041761A /* Info.plist */,
-				7AA9AF2923F9D221003004D8 /* RecordSoundsViewController.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -132,6 +128,39 @@
 				7A50B6A223EDE90D0041761A /* Info.plist */,
 			);
 			path = PitchPerfectUITests;
+			sourceTree = "<group>";
+		};
+		7A5CBCD523F9D65800F8D2CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9AF2B23F9D234003004D8 /* PlaySoundsViewController+Audio.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A5CBCD623F9D70A00F8D2CD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7A5CBCD823F9D71E00F8D2CD /* RecordSounds */,
+				7A5CBCD723F9D71500F8D2CD /* PlaySounds */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7A5CBCD723F9D71500F8D2CD /* PlaySounds */ = {
+			isa = PBXGroup;
+			children = (
+				7A50B68223EDE90B0041761A /* PlaySoundsViewController.swift */,
+			);
+			path = PlaySounds;
+			sourceTree = "<group>";
+		};
+		7A5CBCD823F9D71E00F8D2CD /* RecordSounds */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9AF2923F9D221003004D8 /* RecordSoundsViewController.swift */,
+			);
+			path = RecordSounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +298,6 @@
 				7A50B68323EDE90B0041761A /* PlaySoundsViewController.swift in Sources */,
 				7A50B67F23EDE90B0041761A /* AppDelegate.swift in Sources */,
 				7AA9AF2A23F9D221003004D8 /* RecordSoundsViewController.swift in Sources */,
-				7A50B68123EDE90B0041761A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
