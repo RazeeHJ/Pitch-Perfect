@@ -11,15 +11,14 @@ import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
-   // var audioRecorder: AVAudioRecorder!
-
-    var recordService = RecordService(session: AVAudioSession.sharedInstance())
-    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     @IBOutlet weak var recordingLabel: UILabel!
         
+    var recordService = RecordService(session: AVAudioSession.sharedInstance())
+
     // MARK: PlayingState (raw values correspond to sender tags)
+    
     enum PlayingState { case playing, notPlaying }
     
     override func viewDidLoad() {

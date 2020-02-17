@@ -22,51 +22,50 @@ typealias recordCallback = ((URL?) -> Void)
 
 // MARK: RecordService 
 
-class RecordService: NSObject, AVAudioRecorderDelegate {
+class RecordService: NSObject {
+    private var recordCallback: ((URL?) -> Void)?
     let session: AVAudioSession
     var audioRecorder: AVAudioRecorder!
     var filePath: URL?
-    
-    private var recordCallback: ((URL?) -> Void)?
-
     
     init(session: AVAudioSession) {
         self.session = AVAudioSession.sharedInstance()
     }
     
+    func configure() {
+           configureFileDirectory()
+           configureAV()
+    }
+    
     func getAudioRecordingUrl(completion: @escaping ((URL?) -> Void)) {
         self.recordCallback = completion
     }
-    
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if flag {
-            self.recordCallback?(audioRecorder.url)
-        } else {
-            self.recordCallback?(nil)
-        }
-    }
-    
-    func configure() {
-        configureFileDirectory()
-        configureAV()
-    }
-    
+
     private func configureFileDirectory() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-        let recordingName = "recordedVoice.wav"
+        let recordingName = PlistUtil.getPlistValue(from: .WavFile) ?? ""
         let pathArray = [dirPath, recordingName]
+       
         filePath = URL(string: pathArray.joined(separator: "/"))
     }
     
     private func configureAV() {
-        let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
         audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
-        audioRecorder.record()
+    }
+}
+
+extension RecordService: AVAudioRecorderDelegate {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            self.recordCallback?(audioRecorder.url)
+        } else {
+            self.recordCallback?(nil)
+        }
     }
 }
 
