@@ -62,12 +62,12 @@
                         <outlet property="recordButton" destination="IZa-PM-BRA" id="Pxo-bc-9oR"/>
                         <outlet property="recordingLabel" destination="4CW-rV-bJF" id="21o-1t-OJD"/>
                         <outlet property="stopRecordingButton" destination="Sy2-ee-o5W" id="CiJ-Sh-qgJ"/>
-                        <segue destination="7mp-hH-LnW" kind="show" identifier="stopRecording" id="b55-k7-tiu"/>
+                        <segue destination="7mp-hH-LnW" kind="show" identifier="PlaySoundsViewController" id="b55-k7-tiu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmP-te-zy8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.8550724637682" y="51.5625"/>
+            <point key="canvasLocation" x="-441" y="67"/>
         </scene>
         <!--PlaySounds-->
         <scene sceneID="WAL-MT-rvd">
@@ -77,7 +77,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWn-dg-fpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1859" y="52"/>
+            <point key="canvasLocation" x="260" y="67"/>
         </scene>
     </scenes>
     <resources>

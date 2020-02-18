@@ -17,7 +17,6 @@ protocol Record {
     func perform(action: action)
 }
 
-typealias callback = ((URL?) -> Void)
 typealias recordCallback = ((URL?) -> Void)
 
 // MARK: RecordService 
